@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323225201) do
+ActiveRecord::Schema.define(version: 20150324000029) do
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "batch_size"
+    t.integer  "boil_time"
+    t.decimal  "OG"
+    t.decimal  "FG"
+    t.integer  "IBU"
+    t.decimal  "ABV"
+    t.integer  "SRM"
+    t.text     "grain"
+    t.text     "hops"
+    t.text     "yeast"
+    t.text     "directions"
+    t.text     "notes"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
