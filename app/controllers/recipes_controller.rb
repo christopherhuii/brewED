@@ -40,6 +40,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :batch_size, :boil_time, :OG, :FG, :IBU, :ABV, :SRM, :grain, :hops, :yeast, :directions, :notes)
+    params.require(:recipe).permit(:name, :description, :batch_size, :boil_time, :OG, :FG, :IBU, :ABV, :SRM, :notes,
+                                    grains_attributes: [:id, :description, :done, :_destroy])
   end
 end

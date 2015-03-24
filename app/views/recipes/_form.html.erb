@@ -9,25 +9,40 @@
       </ul>
     <% end %>
   </div>
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-body">
         <%= f.input :name, input_html: { class: "form-control"} %>
         <%= f.input :description, input_html: {class: "form-control"} %>
         <%= f.input :batch_size, input_html: {class: "form-control"} %>
         <%= f.input :boil_time, input_html: {class: "form-control"} %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
         <%= f.input :OG, input_html: {class: "form-control"} %>
         <%= f.input :FG, input_html: {class: "form-control"} %>
         <%= f.input :IBU, input_html: {class: "form-control"} %>
+        <%= f.input :ABV, input_html: {class: "form-control"} %>
         <%= f.input :SRM, input_html: {class: "form-control"} %>
-        <%= f.input :grain, input_html: {class: "form-control"} %>
-        <%= f.input :hops, input_html: {class: "form-control"} %>
-        <%= f.input :yeast, input_html: {class: "form-control"} %>
-        <%= f.input :directions, input_html: {class: "form-control"} %>
-        <%= f.input :notes, input_html: {class: "form-control"} %>
-        <%= f.button :submit %>
-
       </div>
     </div>
+  </div>
+  <div class="col-md-4">
+    <h3>Grains</h3>
+    <div id="grains">
+      <%= f.simple_fields_for :grains do |grain| %>
+        <%= render "grain_fields", f: grain  %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association '+', f, :grains, class: "btn btn-default add-button" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <%= f.input :notes, input_html: {class: "form-control"} %>
+    <%= f.button :submit %>
   </div>
 <% end %>

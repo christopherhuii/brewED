@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324002002) do
+ActiveRecord::Schema.define(version: 20150324212723) do
+
+  create_table "grains", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "recipe_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "grains", ["recipe_id"], name: "index_grains_on_recipe_id"
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +32,6 @@ ActiveRecord::Schema.define(version: 20150324002002) do
     t.integer  "IBU"
     t.decimal  "ABV"
     t.integer  "SRM"
-    t.text     "grain"
-    t.text     "hops"
-    t.text     "yeast"
-    t.text     "directions"
     t.text     "notes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
