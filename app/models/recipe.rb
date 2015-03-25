@@ -10,5 +10,7 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :yeasts, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :directions, :reject_if => :all_blank, :allow_destroy => true
 
+  has_attached_file :image, :styles => { :medium => "300x300>" }
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 end
