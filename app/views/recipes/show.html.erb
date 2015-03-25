@@ -1,4 +1,52 @@
-<div class="col-md-6">
-  <h1><%= @recipe.name %></h1>
-  <p><%= @recipe.description %></p>
+<div class="container">
+  <div class="col-md-4">
+    <%= image_tag @recipe.image.url(:medium) %>
+  </div>
+  <div class="col-md-5">
+    <h1><%= @recipe.name %></h1>
+    <small>Submitted by: <%= @recipe.user.first_name + " " + @recipe.user.last_name %></small>
+    <p><%= @recipe.description %></p>
+    <p>ABV: <%= @recipe.ABV.round(2) %></p>
+    <p>IBU: <%= @recipe.IBU %></p>
+  </div>
+  <div class="col-md-3">
+    <p>BATCH SIZE: <%= @recipe.batch_size %></p>
+    <p>BOIL TIME: <%= @recipe.boil_time %></p>
+    <p>OG: <%= @recipe.OG.round(5) %></p>
+    <p>FG: <%= @recipe.FG.round(5) %></p>
+    <p>SRM: <%= @recipe.SRM %></p>
+  </div>
+</div>
+<div class="container">
+  <div class="col-md-4">
+    <h3>Grains</h3>
+    <ul>
+      <% @recipe.grains.each do |grain| %>
+        <li><%= grain.description %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h3>Hops</h3>
+    <% @recipe.hops.each do |hop| %>
+      <li><%= hop.description %></li>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <h3>Yeast</h3>
+    <% @recipe.yeasts.each do |yeast| %>
+      <li><%= yeast.description %></li>
+    <% end %>
+  </div>
+</div>
+
+<% if !@recipe.directions.empty? %>
+<div class="container">
+  <div class="col-md-12">
+    <h3>Directions</h3>
+    <% @recipe.directions.each do |direction| %>
+      <li><%= direction.description %></li>
+    <% end %>
+  </div>
+<% end %>
 </div>
