@@ -14,8 +14,8 @@
       <div class="panel-body">
         <%= f.input :name, input_html: { class: "form-control"} %>
         <%= f.input :description, input_html: {class: "form-control"} %>
-        <%= f.input :batch_size, input_html: {class: "form-control"} %>
-        <%= f.input :boil_time, input_html: {class: "form-control"} %>
+        <%= f.input :batch_size, placeholder: "e.g. 5 gallons", input_html: {class: "form-control"} %>
+        <%= f.input :boil_time, placeholder: "e.g. 60 minutes",input_html: {class: "form-control"} %>
         <%= f.file_field :image, input_html: {class: "form-control"} %>
       </div>
     </div>
