@@ -8,7 +8,9 @@
 </head>
 <body>
   <header>
-      <%= link_to "brewED", root_path, id: "logo" %>
+    <%= link_to root_path, id: "logo" do %>
+      <%= image_tag('hops.png') %> brewED
+    <% end %>
     <nav>
       <% if user_signed_in? %>
         <%= link_to "New Recipe", new_recipe_path %>

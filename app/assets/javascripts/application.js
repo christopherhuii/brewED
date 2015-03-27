@@ -16,3 +16,7 @@
 //= require cocoon
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+  $('.alert-info').fadeIn(1000).delay(2500).fadeOut("slow");
+});

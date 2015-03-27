@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :recipes
+  authenticated:user do
+    root 'recipes#index', as: 'authenticated_root'
+  end
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
