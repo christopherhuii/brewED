@@ -46,6 +46,7 @@ $dark_gray: #2B2E2E;
 .quote {
   text-align: center;
   padding: 7rem;
+  background-color: rgba(255, 153, 0, 0.2);
   .words {
     font-size: 2rem;
   }
@@ -56,7 +57,7 @@ $dark_gray: #2B2E2E;
 
 #callout {
     background-image: url('ingredients.jpg');
-    background-position: bottom center;
+    background-position: 100% 90%;
     background-size: cover;
   display: table;
   text-align: center;
@@ -74,5 +75,26 @@ $dark_gray: #2B2E2E;
         width: 33%;
         float: left;
     }
+  }
+}
+
+#join_today{
+  background-color: rgba(255, 153, 0, 0.2);
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  .curious{
+    font-size: 4rem;
+
+  }
+  .join{
+    padding: 3rem;
+    font-size: 2rem;
+  }
+  .sign_up_btn{
+    background-color: $orange;
+    border-radius: 20px;
+    font-size: 2rem;
+
   }
 }
