@@ -14,6 +14,7 @@ gem 'devise', '~> 3.4.1'
 gem 'hirb', '~> 0.7.3'
 gem 'simple_form', '~> 3.1.0'
 gem 'cocoon', '~> 1.2.6'
+gem 'masonry-rails'
 gem "paperclip", "~> 4.2"
 
 gem 'sdoc', '~> 0.4.0', group: :doc
