@@ -1,0 +1,9 @@
+$orange: #FF9900;
+$dark_gray: #2B2E2E;
+
+.panel-default, .panel-warning {
+  margin-top: 2.5rem;
+  .panel-heading {
+    background-color: $orange;
+  }
+}
