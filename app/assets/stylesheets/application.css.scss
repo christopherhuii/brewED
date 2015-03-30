@@ -33,9 +33,11 @@ h1, h2, h3, h4, h5, h6, p, a, .field {
 
 header {
   background: $orange;
+  position: relative;
   padding: 1.5rem 5%;
   width: 100%;
   border-bottom: 5px solid $dark_gray;
+  line-height: 5rem;
   #logo {
     img {
       width: 5rem;
@@ -49,7 +51,6 @@ header {
   }
   nav {
     float: right;
-    vertical-align: middle;
     a {
       padding-left: 3rem;
       font-weight: bold;

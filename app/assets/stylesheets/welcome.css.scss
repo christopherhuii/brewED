@@ -31,11 +31,11 @@ $dark_gray: #2B2E2E;
       margin: 6rem auto;
       display: block;
       font-size: 2rem;
+      font-weight: bold;
       color: $dark_gray;
-      background-color: $orange;
-      width: 10rem;
-      border-radius: 20px;
-      border: none;
+      border: 5px solid $orange;
+      background-color: transparent;
+      width: 11rem;
       &:hover{
         text-decoration: none;
       }
