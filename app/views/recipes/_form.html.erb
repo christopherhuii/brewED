@@ -23,7 +23,7 @@
   </div>
   <div class="col-md-4">
     <div class="panel panel-default">
-      <div class="panel-body">
+      <div class="panel-body details">
         <%= f.input :OG, input_html: {class: "form-control"} %>
         <%= f.input :FG, input_html: {class: "form-control"} %>
         <%= f.input :IBU, input_html: {class: "form-control"} %>
@@ -35,11 +35,13 @@
   <div class="col-md-4">
     <h3>Grains</h3>
     <div id="grains">
-      <%= f.simple_fields_for :grains do |grain| %>
-        <%= render "grain_fields", f: grain  %>
-      <% end %>
-      <div class="links">
-        <%= link_to_add_association '+', f, :grains, class: "btn btn-default add-button" %>
+      <div class="panel panel-body">
+        <%= f.simple_fields_for :grains do |grain| %>
+          <%= render "grain_fields", f: grain  %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association '+', f, :grains, class: "btn btn-default add-button" %>
+        </div>
       </div>
     </div>
   </div>
@@ -69,7 +71,7 @@
     <h3>Directions</h3>
     <div id="directions">
       <%= f.simple_fields_for :directions do |direction| %>
-        <%= render 'direction_fields', f: direction %>
+        <%= render 'direction_fields', f: direction, class: "form-control" %>
       <% end %>
       <div class="links">
         <%= link_to_add_association '+', f, :directions, class: "btn btn-default add-button" %>
