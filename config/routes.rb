@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :recipes
+  resources :users
 
   authenticated:user do
     root 'recipes#index', as: 'authenticated_root'
