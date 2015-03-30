@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   get 'welcome/index'
 
+  resources :users do
+    resources :recipes
+  end
+
   resources :recipes
-  resources :users
 
   authenticated:user do
     root 'recipes#index', as: 'authenticated_root'

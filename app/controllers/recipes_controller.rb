@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :find_user, only: [:edit, :update, :show, :destroy]
   before_action :find_recipe, only: [:edit, :update, :show, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
@@ -13,7 +14,7 @@ class RecipesController < ApplicationController
     @recipe = current_user.recipes.build(recipe_params)
 
     if @recipe.save
-      redirect_to @recipe
+      redirect_to user_recipe_path(@recipe.user, @recipe)
     else
       render 'new'
     end
@@ -25,7 +26,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to @recipe
+      redirect_to user_recipe_path(@recipe.user, @recipe)
     else
       render 'edit'
     end
@@ -40,6 +41,11 @@ class RecipesController < ApplicationController
   end
 
   private
+
+  def find_user
+    @user = User.find(params[:user_id])
+  end
+
   def find_recipe
     @recipe = Recipe.find(params[:id])
   end
