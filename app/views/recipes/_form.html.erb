@@ -1,9 +1,9 @@
-<%= simple_form_for @recipe, html: {multipart: true} do |f| %>
+<%= simple_form_for [@recipe.user, @recipe], html: {multipart: true} do |f| %>
   <div id="errors">
     <% if @recipe.errors.any? %>
       <p><%= pluralize(@recipe.errors.count, "error") %> prevented this recipe from saving.</p>
       <ul>
-        <% @recipe.errors.full_message.each do |error| %>
+        <% @recipe.errors.full_messages.each do |error| %>
           <li><%= error %></li>
         <% end %>
       </ul>
