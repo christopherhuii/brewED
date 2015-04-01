@@ -1,43 +1,51 @@
-<div class="container">
+<div class="recipe-info container">
   <div class="col-md-4">
-    <%= image_tag @recipe.image.url(:medium) %>
+    <%= image_tag @recipe.image.url(:medium), class: "thumbnail" %>
   </div>
   <div class="col-md-5">
     <h1><%= @recipe.name %></h1>
     <p><%= @recipe.beer_style %></p>
-    <small>Submitted by: <%= @recipe.user.first_name + " " + @recipe.user.last_name %></small>
+    <p>Submitted by: <%= link_to (@recipe.user.first_name + " " + @recipe.user.last_name), @recipe.user %></p>
     <p><%= @recipe.description %></p>
     <p>ABV: <%= @recipe.ABV.round(2) %></p>
     <p>IBU: <%= @recipe.IBU %></p>
   </div>
   <div class="col-md-3">
-    <p>BATCH SIZE: <%= @recipe.batch_size %></p>
-    <p>BOIL TIME: <%= @recipe.boil_time %></p>
-    <p>OG: <%= @recipe.OG.round(5) %></p>
-    <p>FG: <%= @recipe.FG.round(5) %></p>
-    <p>SRM: <%= @recipe.SRM %></p>
+    <div class="technical-info">
+      <ul class="list-group">
+        <li class="list-group-item">BATCH SIZE: <%= @recipe.batch_size %></li>
+        <li class="list-group-item">BOIL TIME: <%= @recipe.boil_time %></li>
+        <li class="list-group-item">OG: <%= @recipe.OG.round(5) %></li>
+        <li class="list-group-item">FG: <%= @recipe.FG.round(5) %></li>
+        <li class="list-group-item">SRM: <%= @recipe.SRM %></li>
+      </ul>
+    </div>
   </div>
 </div>
 <div class="container">
   <div class="col-md-4">
-    <h3>Grains</h3>
-    <ul>
+      <h3>Grains</h3>
+    <ul class="list-group">
       <% @recipe.grains.each do |grain| %>
-        <li><%= grain.description %></li>
+        <li class="list-group-item"><%= grain.description %></li>
       <% end %>
     </ul>
   </div>
   <div class="col-md-4">
     <h3>Hops</h3>
-    <% @recipe.hops.each do |hop| %>
-      <li><%= hop.description %></li>
-    <% end %>
+    <ul class="list-group">
+      <% @recipe.hops.each do |hop| %>
+        <li class="list-group-item"><%= hop.description %></li>
+      <% end %>
+    </ul>
   </div>
   <div class="col-md-4">
     <h3>Yeast</h3>
-    <% @recipe.yeasts.each do |yeast| %>
-      <li><%= yeast.description %></li>
-    <% end %>
+    <ul class="list-group">
+      <% @recipe.yeasts.each do |yeast| %>
+        <li class="list-group-item"><%= yeast.description %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 

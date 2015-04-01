@@ -105,9 +105,39 @@ header {
   }
 }
 
+.recipe-info {
+  margin-top: 2rem;
+  .technical-info {
+  margin-top: 3rem;
+  }
+}
+
+
+.ingredient-box {
+  text-align: center;
+}
+.form-input {
+  width: 100% !important;
+  float: left;
+}
+.add-button {
+  margin-left: 10%;
+  float: left;
+}
+.control-label {
+  float: left;
+}
+
 .user-info {
   padding: 0 5%;
   .user-name {
     text-decoration: underline;
   }
 }
+
+.submit-btn {
+  margin-bottom: 5%;
+}
+
+// INDIVIDUAL RECIPE SHOW PAGE //
+
