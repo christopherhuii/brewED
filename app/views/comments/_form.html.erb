@@ -1,7 +1,7 @@
 <div class="container">
   <% if user_signed_in? %>
     <%= form_for([@recipe.user, @recipe, @comment]) do |f| %>
-      <%= f.label :content %><br>
+      <%= f.label :comment %><br>
       <%= f.text_area :content %><br>
       <br>
       <%= f.submit class: "btn btn-default" %>

@@ -22,7 +22,7 @@
 $dark_gray: #2B2E2E;
 $orange: #FF9900;
 
-h1, h2, h3, h4, h5, h6, p, a, label, input[type="submit"], .field {
+h1, h2, h3, h4, h5, h6, p, a, span, label, small, input[type="submit"], .field {
   font-family: 'Comfortaa';
   color: $dark_gray;
 }
@@ -144,6 +144,19 @@ header {
 #comment_content {
   width: 65%;
   height: 100px;
+}
+
+.comment-count {
+  font-size: 3rem;
+}
+
+.time-ago {
+  padding-left: 2rem;
+}
+
+.comment-content {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid $dark_gray;
 }
 
 // INDIVIDUAL RECIPE SHOW PAGE //

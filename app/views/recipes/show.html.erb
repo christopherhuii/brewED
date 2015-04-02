@@ -64,11 +64,14 @@
   <div class="col-md-12">
     <%= render "comments/form" %>
   </div>
-  <div class="col-md-6">
-    <p><%= @recipe.comments.count %> Comments</p>
-    <% @recipe.comments.each do |comment| %>
-      <p><%= comment.content %><p>
-      <%= comment.user.first_name %>
-    <% end %>
+  <div class="col-md-8">
+    <p class="comment-count"><%= @recipe.comments.count %> Comments</p>
+    <div class="col-md-offset-1">
+      <% @recipe.comments.each do |comment| %>
+        <span><%= comment.user.first_name + ' ' + comment.user.last_name%></span>
+        <small class="time-ago"><%= time_ago_in_words(comment.created_at) %> ago</small>
+        <p class="comment-content"><%= comment.content %><p>
+      <% end %>
+    </div>
   </div>
 </div>
