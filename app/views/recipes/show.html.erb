@@ -60,4 +60,15 @@
 </div>
 <% end %>
 
-<%= render "comments/form" %>
+<div class="container">
+  <div class="col-md-12">
+    <%= render "comments/form" %>
+  </div>
+  <div class="col-md-6">
+    <p><%= @recipe.comments.count %> Comments</p>
+    <% @recipe.comments.each do |comment| %>
+      <p><%= comment.content %><p>
+      <%= comment.user.first_name %>
+    <% end %>
+  </div>
+</div>

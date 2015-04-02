@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order("created_at DESC")
   end
 
   def new
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-
+    @comment = Comment.new
   end
 
   def destroy

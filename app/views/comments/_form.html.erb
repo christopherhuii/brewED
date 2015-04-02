@@ -1,8 +1,10 @@
-<% if user_signed_in? %>
-  <%= form_for([@recipe.user, @recipe, @recipe.comments.build]) do |f| %>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %><br>
-    <br>
-    <%= f.submit %>
+<div class="container">
+  <% if user_signed_in? %>
+    <%= form_for([@recipe.user, @recipe, @comment]) do |f| %>
+      <%= f.label :content %><br>
+      <%= f.text_area :content %><br>
+      <br>
+      <%= f.submit class: "btn btn-default" %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
