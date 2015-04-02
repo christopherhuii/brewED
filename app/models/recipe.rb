@@ -5,6 +5,8 @@ class Recipe < ActiveRecord::Base
   has_many :yeasts
   has_many :directions
 
+  has_many :comments
+
   accepts_nested_attributes_for :grains, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :hops, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :yeasts, :reject_if => :all_blank, :allow_destroy => true

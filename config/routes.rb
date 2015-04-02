@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :users do
-    resources :recipes
+    resources :recipes do
+      resources :comments
+    end
   end
 
   resources :recipes
