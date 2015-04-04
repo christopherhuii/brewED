@@ -22,7 +22,7 @@
 $dark_gray: #2B2E2E;
 $orange: #FF9900;
 
-h1, h2, h3, h4, h5, h6, p, a, span, label, small, input[type="submit"], .field {
+h1, h2, h3, h4, h5, h6, p, a, span, label, small, input, textarea, .field {
   font-family: 'Comfortaa';
   color: $dark_gray;
 }
@@ -105,6 +105,11 @@ header {
   }
 }
 
+.empty-recipes {
+  text-align: center;
+  padding-top: 5%;
+}
+
 
 .recipe-info {
   padding-top: 2rem;
@@ -147,6 +152,7 @@ header {
 }
 
 .comment-count {
+  padding-top: 2rem;
   font-size: 3rem;
 }
 

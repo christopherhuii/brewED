@@ -53,9 +53,11 @@
 <div class="container">
   <div class="col-md-12">
     <h3>Directions</h3>
-    <% @recipe.directions.each do |direction| %>
-      <li><%= direction.description %></li>
-    <% end %>
+    <ol>
+      <% @recipe.directions.each do |direction| %>
+        <li><%= direction.description %></li>
+      <% end %>
+    </ol>
   </div>
 </div>
 <% end %>

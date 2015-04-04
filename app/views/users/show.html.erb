@@ -4,6 +4,14 @@
   </div>
 </div>
 
+<% if @user.recipes.empty? %>
+<div class="empty-recipes">
+  <h1>You have no homebrew recipes saved!</h1>
+  <h3><%= link_to "Click Here to Create a New Recipe Now!", new_recipe_path %></h3>
+</div>
+
+<% else %>
+
 <div class="recipes">
   <% @user.recipes.reverse_each do |recipe| %>
   <div class="box panel panel-default">
@@ -15,3 +23,4 @@
   </div>
   <% end %>
 </div>
+<% end %>
