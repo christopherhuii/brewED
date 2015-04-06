@@ -1,28 +1,5 @@
-== README
+== brewED
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I built brewED to celebrate my love for craft beer and the homebrewing community. brewED allows homebrewers to share and try not homebrews that are being made. Users are able to keep track of their own recipes and are also able to discover recipes other brewers are currently experimenting with. My hope is that brewED will help bring brewers together and help everyone learn more about beer!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+** This is still a work in progress.
