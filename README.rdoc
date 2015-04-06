@@ -1,5 +1,5 @@
 == brewED
 
-I built brewED to celebrate my love for craft beer and the homebrewing community. brewED allows homebrewers to share and try not homebrews that are being made. Users are able to keep track of their own recipes and are also able to discover recipes other brewers are currently experimenting with. My hope is that brewED will help bring brewers together and help everyone learn more about beer!
+I built brewED to celebrate my love for craft beer and the homebrewing community. brewED allows homebrewers to share and try new homebrews that are being made. Users are able to keep track of their own recipes and are also able to discover recipes other brewers are currently experimenting with. My hope is that brewED will help bring brewers together and help everyone learn more about beer!
 
 ** This is still a work in progress.
