@@ -1,35 +1,42 @@
-<div class="banner">
-  <div class="layer">
-    <h1>brewED</h1>
-    <p>Track and Explore New Homebrews Today!</p>
-    <%= link_to "Explore", recipes_path, class: "btn btn-default welcome_btn" %>
-  </div>
-</div>
-<div class="quote">
-  <p class="words">Give a man a beer, waste an hour. Teach a man to brew, and waste a lifetime!</p>
-  <p class="author">Bill Owen</p>
-</div>
-<div id="callout">
-  <div class="callout_inner">
-    <div class="layer">
-      <div class="callouts">
-        <h2>Grains</h2>
-        <p>filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text</p>
-
-      </div>
-      <div class="callouts">
-        <h2>Hops</h2>
-        <p>filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text</p>
-      </div>
-      <div class="callouts">
-        <h2>Yeast</h2>
-        <p>filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="banner">
+      <div class="layer">
+        <h1>brewED</h1>
+        <p>Track and Explore New Homebrews Today!</p>
+        <%= link_to "Explore", recipes_path, class: "btn btn-default welcome-btn" %>
       </div>
     </div>
   </div>
-</div>
-<div id="join_today">
-  <p class="curious">Curious?</p>
-  <p class="join">Come join us today at brewED and learn more about homebrew!</p>
-  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default sign_up_btn" %>
+  <div class="row">
+    <div class="quote">
+      <p class="words">Give a man a beer, waste an hour. Teach a man to brew, and waste a lifetime!</p>
+      <p class="author">Bill Owen</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="callout-row">
+      <div class="layer">
+        <div class="col-md-4 col-xs-12 callouts">
+          <h2>Grains</h2>
+          <p>filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text</p>
+        </div>
+        <div class="col-md-4 col-xs-12 callouts">
+          <h2>Hops</h2>
+          <p>filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text</p>
+        </div>
+        <div class="col-md-4 col-xs-12 callouts">
+          <h2>Yeast</h2>
+          <p>filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text filler text</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="join-today">
+      <p class="curious">Curious?</p>
+      <p class="join">Come join us today at brewED and learn more about homebrew!</p>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default sign-up-btn" %>
+    </div>
+  </div>
 </div>
