@@ -9,66 +9,85 @@
       </ul>
     <% end %>
   </div>
-  <div class="col-md-10 col-md-offset-1">
-    <div class="col-md-8">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <%= f.input :name, input_html: { class: "form-control"} %>
-          <%= f.input :description, input_html: {class: "form-control"} %>
-          <%= f.input :beer_style, input_html: {class: "form-control"} %>
-          <%= f.input :batch_size, placeholder: "e.g. 5 gallons", input_html: {class: "form-control"} %>
-          <%= f.input :boil_time, placeholder: "e.g. 60 minutes",input_html: {class: "form-control"} %>
-          <%= f.file_field :image, input_html: {class: "form-control"} %>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <%= f.input :name, input_html: { class: "form-control"} %>
+            <%= f.input :description, input_html: {class: "form-control"} %>
+            <%= f.input :beer_style, input_html: {class: "form-control"} %>
+            <%= f.input :batch_size, placeholder: "e.g. 5 gallons", input_html: {class: "form-control"} %>
+            <%= f.input :boil_time, placeholder: "e.g. 60 minutes",input_html: {class: "form-control"} %>
+            <%= f.file_field :image, input_html: {class: "form-control"} %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-body details">
-          <%= f.input :OG, input_html: {class: "form-control"} %>
-          <%= f.input :FG, input_html: {class: "form-control"} %>
-          <%= f.input :IBU, input_html: {class: "form-control"} %>
-          <%= f.input :ABV, input_html: {class: "form-control"} %>
-          <%= f.input :SRM, input_html: {class: "form-control"} %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 ingredient-box">
-    <div class="panel panel-body">
-      <h3>Grains</h3>
-      <div id="grains">
-        <%= f.simple_fields_for :grains do |grain| %>
-          <%= render "grain_fields", f: grain  %>
-        <% end %>
-        <div class="links">
-          <%= link_to_add_association '+', f, :grains, class: "btn btn-default add-button" %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body details">
+            <%= f.input :OG, input_html: {class: "form-control"} %>
+            <%= f.input :FG, input_html: {class: "form-control"} %>
+            <%= f.input :IBU, input_html: {class: "form-control"} %>
+            <%= f.input :ABV, input_html: {class: "form-control"} %>
+            <%= f.input :SRM, input_html: {class: "form-control"} %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-4 ingredient-box">
-    <div class="panel panel-body">
-      <h3>Hops</h3>
-      <div id="hops">
-        <%= f.simple_fields_for :hops do |hop| %>
-          <%= render "hop_fields", f: hop  %>
-        <% end %>
-        <div class="links">
-          <%= link_to_add_association '+', f, :hops, class: "btn btn-default add-button" %>
+  <div class="row">
+    <div class="col-md-6 ingredient-box">
+      <div class="panel panel-body">
+        <h3>Grains</h3>
+        <div id="grains">
+          <%= f.simple_fields_for :grains do |grain| %>
+            <%= render "grain_fields", f: grain  %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association '+', f, :grains, class: "btn btn-default add-button" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 ingredient-box">
+      <div class="panel panel-body">
+        <h3>Hops</h3>
+        <div id="hops">
+          <%= f.simple_fields_for :hops do |hop| %>
+            <%= render "hop_fields", f: hop  %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association '+', f, :hops, class: "btn btn-default add-button" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-4 ingredient-box">
-    <div class="panel panel-body">
-      <h3>Yeasts</h3>
-      <div id="yeasts">
-        <%= f.simple_fields_for :yeasts do |yeast| %>
-          <%= render "yeast_fields", f: yeast  %>
-        <% end %>
-        <div class="links">
-          <%= link_to_add_association '+', f, :yeasts, class: "btn btn-default add-button" %>
+  <div class="row">
+    <div class="col-md-6 ingredient-box">
+      <div class="panel panel-body">
+        <h3>Yeasts</h3>
+        <div id="yeasts">
+          <%= f.simple_fields_for :yeasts do |yeast| %>
+            <%= render "yeast_fields", f: yeast  %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association '+', f, :yeasts, class: "btn btn-default add-button" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 ingredient-box">
+      <div class="panel panel-body">
+        <h3>Miscellaneous</h3>
+        <div id="misc">
+          <%= f.simple_fields_for :miscs do |misc| %>
+            <%= render "misc_fields", f: misc  %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association '+', f, :miscs, class: "btn btn-default add-button" %>
+          </div>
         </div>
       </div>
     </div>

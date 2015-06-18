@@ -56,6 +56,7 @@ class RecipesController < ApplicationController
                                     grains_attributes: [:id, :description, :done, :_destroy],
                                     hops_attributes: [:id, :description, :done, :_destroy],
                                     yeasts_attributes: [:id, :description, :done, :_destroy],
+                                    miscs_attributes: [:id, :description, :done, :_destroy],
                                     directions_attributes: [:id, :description, :done, :_destroy])
   end
 end

@@ -23,29 +23,41 @@
   </div>
 </div>
 <div class="container">
-  <div class="col-md-4">
-      <h3>Grains</h3>
-    <ul class="list-group">
-      <% @recipe.grains.each do |grain| %>
-        <li class="list-group-item"><%= grain.description %></li>
-      <% end %>
-    </ul>
+  <div class="row">
+    <div class="col-md-6">
+        <h3>Grains</h3>
+      <ul class="list-group">
+        <% @recipe.grains.each do |grain| %>
+          <li class="list-group-item"><%= grain.description %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3>Hops</h3>
+      <ul class="list-group">
+        <% @recipe.hops.each do |hop| %>
+          <li class="list-group-item"><%= hop.description %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-  <div class="col-md-4">
-    <h3>Hops</h3>
-    <ul class="list-group">
-      <% @recipe.hops.each do |hop| %>
-        <li class="list-group-item"><%= hop.description %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="col-md-4">
-    <h3>Yeast</h3>
-    <ul class="list-group">
-      <% @recipe.yeasts.each do |yeast| %>
-        <li class="list-group-item"><%= yeast.description %></li>
-      <% end %>
-    </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Yeast</h3>
+      <ul class="list-group">
+        <% @recipe.yeasts.each do |yeast| %>
+          <li class="list-group-item"><%= yeast.description %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h3>Miscellaneous</h3>
+      <ul class="list-group">
+        <% @recipe.miscs.each do |misc| %>
+          <li class="list-group-item"><%= misc.description %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
 

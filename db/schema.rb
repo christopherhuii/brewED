@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402082051) do
+ActiveRecord::Schema.define(version: 20150617073428) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20150402082051) do
   end
 
   add_index "hops", ["recipe_id"], name: "index_hops_on_recipe_id"
+
+  create_table "miscs", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "recipe_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "miscs", ["recipe_id"], name: "index_miscs_on_recipe_id"
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
