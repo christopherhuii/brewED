@@ -41,6 +41,23 @@ Recipe.create([
     IBU: 39,
     beer_style: "Belgian Tripel",
     user_id: 1
+  },
+  {
+    name: "Rissian River Pliny the Elder Clone",
+    description: "Russian River Brewing Company’s Pliny the Elder is one of the most coveted double IPAs on the market. Craft beer drinkers travel far and wide to get their hands on a bottle or a pour from the tap. Pliny Elder has earned medals in the Great American Beer Festival and has been named Zymurgy‘s Best Beer in America for multiple years..
+
+      Whether you can’t get your hands on a Pliny the Elder sample or you want to see how close you can brew the real thing, this Pliny the Elder clone recipe is perfect! Provided by Russian River founder and brewmaster, Vinnie Cilurzo, this small batch recipe uses over three-quarters of a pound of hops, making for a bitter and fragrant double IPA experience.",
+    batch_size: "6 Gallons (22.7 L)",
+    boil_time: "90 Minutes",
+    image: recipe_image('pliny1.jpg'),
+    OG: 1.072,
+    FG: 1.011,
+    ABV: 8.2,
+    SRM: 7,
+    IBU: 90,
+    beer_style: "Double IPA",
+    notes: "Note: This recipe is for a 6 gallon batch, with 5 gallons intended to remain after hop loss.",
+    user_id: 1
   }
 ])
 
@@ -58,6 +75,50 @@ Hop.create([
   {
     description: "0.5 oz (14 g) Saaz, 3.7% a.a (15 min)",
     recipe_id: 1
+  },
+  {
+    description: "1.0 oz (28 g) Centennial hops, 8% a.a. (0 min)",
+    recipe_id: 2
+  },
+  {
+    description: "2.5 oz (71 g) Simcoe hops, 12.3% a.a. (0 min)",
+    recipe_id: 2
+  },
+  {
+    description: "1.0 oz (28 g) Simcoe hops, 12.3% a.a. (30 min)",
+    recipe_id: 2
+  },
+  {
+    description: "0.75 oz (21 g) Columbus* hops, 13.9% a.a. (45 min)",
+    recipe_id: 2
+  },
+  {
+    description: "3.5 oz (99 g) Columbus* hops, 13.9% a.a. (90 min)",
+    recipe_id: 2
+  },
+  {
+    description: "1.0 oz (28 g) Columbus* hops, 13.9% a.a. (dry hop, 12-14 days total)",
+    recipe_id: 2
+  },
+  {
+    description: "1.0 oz (28 g) Centennial hops, 9.1% a.a. (dry hop, 12-14 days total)",
+    recipe_id: 2
+  },
+  {
+    description: "1.0 oz (28 g) Simcoe hops, 12.3% a.a. (dry hop, 12-14 days total)",
+    recipe_id: 2
+  },
+  {
+    description: "0.25 oz (7 g) Columbus* hops, 13.9% a.a. (dry hop, 5 days to go in dry hop)",
+    recipe_id: 2
+  },
+  {
+    description: "0.25 oz (7 g) Centennial hops, 9.1% a.a. (dry hop, 5 days to go in dry hop)",
+    recipe_id: 2
+  },
+  {
+    description: "0.25 oz (7 g) Simcoe hops, 12.3% a.a. (dry hop, 5 days to go in dry hop)",
+    recipe_id: 2
   }
 ])
 
@@ -75,6 +136,18 @@ Grain.create([
     description: "1.0 lb (0.45 kg) Belgian candy sugar (clear)",
     recipe_id: 1
   },
+  {
+    description: "13.25 lb (6.01 kg) two-row pale malt",
+    recipe_id: 2
+  },
+  {
+    description: "0.6 lb (272 g) crystal 45° L malt",
+    recipe_id: 2
+  },
+  {
+    description: "0.6 lb (272 g) Carapils (dextrin) malt",
+    recipe_id: 2
+  },
 ])
 
 Yeast.destroy_all
@@ -83,6 +156,10 @@ Yeast.create([
   {
     description: "Wyeast 3787 Belgian Trappist Yeast",
     recipe_id: 1
+  },
+  {
+    description: "White Labs WLP001 California Ale Yeast or Wyeast 1056 America Ale Yeast",
+    recipe_id: 2
   }
 ])
 
@@ -108,6 +185,10 @@ Misc.create ([
   {
     description: "Irish Moss",
     recipe_id: 1
+  },
+  {
+    description: "0.75 lb (340 g) dextrose (corn) sugar",
+    recipe_id: 2
   }
 ])
 
@@ -137,5 +218,25 @@ Direction.create([
   {
     description: "Rack to secondary when specific gravity reading is 1.050.",
     recipe_id: 1
+  },
+  {
+    description: "To make this Pliny the Elder clone, mash grains at 151-152°F (66-67°C) for an hour or until starch conversion is complete. Mash out at 170°F (77°C) and sparge. Collect 8 gallons (30 L) of runoff, stir in dextrose and bring to a boil.",
+    recipe_id: 2
+  },
+  {
+    description: "Add hops as indicated in the recipe.",
+    recipe_id: 2
+  },
+  {
+    description: "After a 90 minute boil, chill wort to 67°F (19°C) and transfer to a fermenter. Pitch two packages of yeast or a yeast starter and aerate well.",
+    recipe_id: 2
+  },
+  {
+    description: "Ferment at 67°F (19°C) until fermentation activity subsides, then rack to secondary.",
+    recipe_id: 2
+  },
+  {
+    description: "Add first set of dry hops on top of the racked beer and age 7-9 days, then add the second set. Age five more days then bottle or keg.",
+    recipe_id: 2
   }
 ])
