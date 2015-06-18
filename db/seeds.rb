@@ -25,22 +25,24 @@ User.create(
 
 Recipe.destroy_all
 
-Recipe.create(
-  name: "Beast Mauler Tripel",
-  description: "Belgian beers have a particular ethos—a kind of Belgian black magic. You brew it, throw it in a fermenter, add some yeast and let it go to work. It’s hard to understand what exactly happens while the beer is fermenting, but we’ve all tasted a Belgian beer’s particularities that separate it from all other beers, and most of us wonder how it’s done.
+Recipe.create([
+  {
+    name: "Beast Mauler Tripel",
+    description: "Belgian beers have a particular ethos—a kind of Belgian black magic. You brew it, throw it in a fermenter, add some yeast and let it go to work. It’s hard to understand what exactly happens while the beer is fermenting, but we’ve all tasted a Belgian beer’s particularities that separate it from all other beers, and most of us wonder how it’s done.
 
-    Lew Bryson of Malt Advocate shares some of his thoughts on what makes a Belgian beer Belgian in his article “Conjuring Up The Black Magic of Belgian Beers,” in January/February 2005 Zymurgy. He gives a few conclusions and some advice, but the best way to figure it out is to go try it yourself. Check out the recipe below and see how your Belgian beer stacks up!",
-  batch_size: "5 Gallons (19 L)",
-  boil_time: "90 Minutes",
-  image: recipe_image('belgian-tripel-1.jpg'),
-  OG: 1.082,
-  FG: 1.020,
-  ABV: 8.14,
-  SRM: 8,
-  IBU: 39,
-  beer_style: "Belgian Tripel",
-  user_id: 1
-)
+      Lew Bryson of Malt Advocate shares some of his thoughts on what makes a Belgian beer Belgian in his article “Conjuring Up The Black Magic of Belgian Beers,” in January/February 2005 Zymurgy. He gives a few conclusions and some advice, but the best way to figure it out is to go try it yourself. Check out the recipe below and see how your Belgian beer stacks up!",
+    batch_size: "5 Gallons (19 L)",
+    boil_time: "90 Minutes",
+    image: recipe_image('belgian-tripel-1.jpg'),
+    OG: 1.082,
+    FG: 1.020,
+    ABV: 8.14,
+    SRM: 8,
+    IBU: 39,
+    beer_style: "Belgian Tripel",
+    user_id: 1
+  }
+])
 
 Hop.destroy_all
 
