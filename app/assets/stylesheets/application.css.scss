@@ -22,9 +22,14 @@
 $dark_gray: #2B2E2E;
 $orange: #FF9900;
 
-h1, h2, h3, h4, h5, h6, p, a, span, label, small, input, textarea, .field {
+h1, h2, h3, h4, h5, h6, p, a, li, span, label, small, input, textarea, .field {
   font-family: 'Comfortaa';
   color: $dark_gray;
+}
+
+.list-group-item {
+  background-color: #ffedcc;
+  border: 1px solid grey;
 }
 
 .alert {
@@ -105,20 +110,31 @@ header {
   }
 }
 
+.panel {
+  margin-bottom: 0;
+}
+
 .empty-recipes {
   text-align: center;
   padding-top: 5%;
 }
 
+.recipe-page {
+  margin: 5%  5%;
+  background-color: #ff9900;
+  -webkit-box-shadow: 0px 0px 16px 5px lightgray;
+  -moz-box-shadow: 0px 0px 16px 5px lightgray;
+  box-shadow: 0px 0px 10px 3px lightgray;
+  line-height: 25px;
+}
 
 .recipe-info {
   padding-top: 2rem;
-  .technical-info {
-  margin-top: 6rem;
-  }
 }
 
-
+.beer-style {
+  color: $orange;
+}
 
 .ingredient-box {
   text-align: center;

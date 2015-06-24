@@ -118,6 +118,54 @@ Recipe.create([
     IBU: 45,
     beer_style: "American Pale Ale",
     user_id: 1
+  },
+  {
+    name: "Split Open and Melt",
+    description: "Pat Craddock of Royal Oak, MI, member of the Kuhnhenn Guild of Brewers Homebrew Club, won a gold medal in Category #13: Stout during the 2013 National Homebrew Competition Final Round in Philadelphia, PA. Craddock’s Stout was chosen as the best among 576 final round entries in the category.",
+    batch_size: "5 Gallons (18.93 L)",
+    boil_time: "60 Minutes",
+    image: recipe_image('stout.jpg'),
+    OG: 1.095,
+    FG: 1.025,
+    ABV: 9.25,
+    SRM: 32,
+    IBU: 38,
+    beer_style: "Russian Imperial Stout",
+    user_id: 1
+  },
+  {
+    name: "Dogfish Head 90 Minute IPA Clone",
+    description: "Dogfish Head Craft Brewery of Deleware is known for making some “off-centered” beers, but one of the styles they are still best known for is the IPA. 90 Minute IPA is an Imperial IPA that takes hop additions to the next level. Instead of having early, middle and late hop additions, the 90 Minute recipe, named for the length of the boil, has the brewer continuously add hops throughout the boil.
+
+      The result is a hop-forward imperial IPA with enough malt backbone to keep things balanced. Try your hand at brewing the clone and see how it stands up to the real thing!",
+    batch_size: "5 Gallons (18.93 L)",
+    boil_time: "90 Minutes",
+    image: recipe_image('dfh-90-min-ipa.jpg'),
+    OG: 1.086,
+    FG: 1.016,
+    ABV: 9.0,
+    SRM: 7,
+    IBU: 90,
+    beer_style: "Imperial IPA",
+    user_id: 1
+  },
+  {
+    name: "Bill's Farmhouse Ale",
+    description: "Bill Schneller has been a homebrewer for 15 years and brews mostly Belgian style ales. He knows they are mysterious, and the recipes act more like guidelines for developing your own. In his article “Belgian Style Ales: Tricks of the Trade” found in January/February 2005 Zymurgy magazine, he gives a few tips and tricks to brew a quality Belgian farmhouse ale. But how did the farmhouse ale come to be?
+
+      The flatlands of Flanders were once the setting of many small, independent farms. Naturally, they brewed beer. Not just because it tasted great and was an important part of their culture, but because it was a necessary food product, providing crucial daily nutrition. The brewing season was short due to demands for harvesting crops, among other things, and so the cold winter months were spent brewing for the entire year. Since the brewing season was so short the ales needed to remain stable in flavor.
+
+      Farms developed two ways to create a brew to help keep it stable over the year – increase the hops or increase the alcohol content. The two methods resulted in distinct beer styles – one hoppy and refreshing, the other a full-bodied source of nutrition. These homemade ales were extremely varied in taste and quality because they were limited to the farms where they were brewed and consumed. Farmhouse ales are a true testament to homebrewing. Check out Bill’s Farmhouse Ale below and see what you come up with!",
+    batch_size: "5 Gallons (18.93 L)",
+    boil_time: "90 Minutes",
+    image: recipe_image('farmhouse-ale.jpg'),
+    OG: 1.068,
+    FG: 1.012,
+    ABV: 7.35,
+    SRM: 4,
+    IBU: 25,
+    beer_style: "Saison",
+    user_id: 1
   }
 ])
 
@@ -216,6 +264,58 @@ Hop.create([
     description: "1.5 oz (43 g) Centennial whole hops, 10.9% a.a. (dry)",
     recipe_id: 6
   },
+  {
+    description: "2.0 oz (57 g) homegrown Chinook hops (60 min)",
+    recipe_id: 7
+  },
+  {
+    description: "1.0 oz (28 g) East Kent Goldings hops (30 min)",
+    recipe_id: 7
+  },
+  {
+    description: "1.0 oz (28 g) East Kent Goldings hops (0 min)",
+    recipe_id: 7
+  },
+  {
+    description: "1.0 oz (28 g) East Kent Goldings hops (dry)",
+    recipe_id: 7
+  },
+  {
+    description: "2.5 oz (70 g) Amarillo pellet hops, 8% a.a. (90 min, see directions)",
+    recipe_id: 8
+  },
+  {
+    description: "0.75 oz (21 g) Simcoe pellet hops, 13% a.a. (90 min, see directions)",
+    recipe_id: 8
+  },
+  {
+    description: "0.5 oz (14 g) Warrior pellet hops, 15% a.a. (90 min, see directions)",
+    recipe_id: 8
+  },
+  {
+    description: "1.0 oz (28 g) Amarillo whole hops, 8% a.a. (dry hop)",
+    recipe_id: 8
+  },
+  {
+    description: "0.5 oz (14 g) Simcoe whole hops, 13% a.a. (dry hop)",
+    recipe_id: 8
+  },
+  {
+    description: "0.5 oz (14 g) Glacier whole hops, 5.8% a.a. (dry hop)",
+    recipe_id: 8
+  },
+  {
+    description: "1.0 oz (28 g) Hallertauer hops, 4.7% a.a. (60 min)",
+    recipe_id: 9
+  },
+  {
+    description: "0.5 oz (14 g) Hallertauer hops, 4.7% a.a. (30 min)",
+    recipe_id: 9
+  },
+  {
+    description: "0.5 oz (14 g) Hallertauer hops, 4.7% a.a. (10 min)",
+    recipe_id: 9
+  }
 ])
 
 Grain.destroy_all
@@ -300,6 +400,46 @@ Grain.create([
   {
     description: "4.0 oz (113 g) Victory malt",
     recipe_id: 6
+  },
+  {
+    description: "18.0 lb (8.16 kg) two-row pale malt",
+    recipe_id: 7
+  },
+  {
+    description: "2.0 lb (0.9 kg) chocolate malt",
+    recipe_id: 7
+  },
+  {
+    description: "1.0 lb (0.45 kg) 120° L crystal malt",
+    recipe_id: 7
+  },
+  {
+    description: "1.0 lb (0.45 kg) CaraMunich® malt",
+    recipe_id: 7
+  },
+  {
+    description: "16.0 lb (7.3 kg) Pale two-row malt",
+    recipe_id: 8
+  },
+  {
+    description: "1.0 lb (0.45 kg) Munich malt",
+    recipe_id: 8
+  },
+  {
+    description: "6.0 lb (2.7 kg) two-row malt",
+    recipe_id: 9
+  },
+  {
+    description: "4.0 lb (1.8 kg) Vienna malt",
+    recipe_id: 9
+  },
+  {
+    description: "1.0 lb (0.45 kg) wheat malt",
+    recipe_id: 9
+  },
+  {
+    description: "1.0 lb (0.45 kg) flaked oats",
+    recipe_id: 9
   }
 ])
 
@@ -333,6 +473,18 @@ Yeast.create([
   {
     description: "White Labs WLP051 California V Ale, Wyeast 1272 American Ale II, Safale US-05 Ale, or Danstar BRY-97",
     recipe_id: 6
+  },
+  {
+    description: "White Labs WLP001 California ale yeast (starter)",
+    recipe_id: 7
+  },
+  {
+    description: "Wyeast 1056 American Ale Yeast",
+    recipe_id: 8
+  },
+  {
+    description: "White labs Saison Yeast",
+    recipe_id: 9
   }
 ])
 
@@ -398,6 +550,22 @@ Misc.create ([
   {
     description: "8.0 oz (227 g) Orange blossom honey (added during the boil)",
     recipe_id: 6
+  },
+  {
+    description: "1 Whirlfloc",
+    recipe_id: 7
+  },
+  {
+    description: "Yeast Nutrient",
+    recipe_id: 7
+  },
+  {
+    description: "0.75 lb (340 g) corn sugar (added to kettle)",
+    recipe_id: 9
+  },
+  {
+    description: "0.5 oz (14 g) dried bitter orange peel (10 min)",
+    recipe_id: 9
   }
 ])
 
@@ -509,5 +677,41 @@ Direction.create([
   {
     description: "Keg at 2.5 volumes of CO2 or bottle condition with 4 oz (113 g) corn sugar.",
     recipe_id: 6
-  }
+  },
+  {
+    description: "Mash at 152° F (67° C) for 60 minutes.",
+    recipe_id: 7
+  },
+  {
+    description: "Primary Fermentation at 67° F (19° C).",
+    recipe_id: 7
+  },
+  {
+    description: "Force carbonated and bottled.",
+    recipe_id: 7
+  },
+  {
+    description: "This Dogfish Head 90 Minute IPA Clone is created with a single infusion mash at 150°F (66°C) for 60 minutes.",
+    recipe_id: 8
+  },
+  {
+    description: "Boil for 90 minutes. Combine all of your kettle hops into one bowl, weigh out 0.2 ounces (5.6 grams) of the hop mixture and add to the boil every five minutes for the duration of the boil.",
+    recipe_id: 8
+  },
+  {
+    description: "Ferment at 72°F (22°C) until gravity reaches terminal. Rack into secondary and add dry hops for at least one week. Package and serve.",
+    recipe_id: 8
+  },
+  {
+    description: "Mash grains at 153° F (67° C) for one hour. Mash out at 168° F (76° C). Sparge with 168° F (76° C) water to collect 7 gallons.",
+    recipe_id: 9
+  },
+  {
+    description: "Boil 90 minutes.",
+    recipe_id: 9
+  },
+  {
+    description: "Cool to 70° F (21° C) and pitch yeast. Ferment at 72° F (22° C) for two weeks. Rack to secondary for additional two weeks.",
+    recipe_id: 9
+  },
 ])

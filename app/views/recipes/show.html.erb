@@ -1,90 +1,99 @@
-<div class="recipe-info container">
-  <div class="col-md-4">
-    <%= image_tag @recipe.image.url(:medium), class: "thumbnail" %>
-  </div>
-  <div class="col-md-5">
-    <h1><%= @recipe.name %></h1>
-    <p><%= @recipe.beer_style %></p>
-    <p>Submitted by: <%= link_to (@recipe.user.first_name + " " + @recipe.user.last_name), @recipe.user %></p>
-    <p><%= @recipe.description %></p>
-    <p>ABV: <%= @recipe.ABV.round(2) %></p>
-    <p>IBU: <%= @recipe.IBU %></p>
-  </div>
-  <div class="col-md-3">
-    <div class="technical-info">
-      <ul class="list-group">
-        <li class="list-group-item">BATCH SIZE: <%= @recipe.batch_size %></li>
-        <li class="list-group-item">BOIL TIME: <%= @recipe.boil_time %></li>
-        <li class="list-group-item">OG: <%= @recipe.OG.round(5) %></li>
-        <li class="list-group-item">FG: <%= @recipe.FG.round(5) %></li>
-        <li class="list-group-item">SRM: <%= @recipe.SRM %></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div class="container">
+<div class="recipe-page container-fluid">
   <div class="row">
-    <div class="col-md-6">
-        <h3>Grains</h3>
-      <ul class="list-group">
-        <% @recipe.grains.each do |grain| %>
-          <li class="list-group-item"><%= grain.description %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3>Hops</h3>
-      <ul class="list-group">
-        <% @recipe.hops.each do |hop| %>
-          <li class="list-group-item"><%= hop.description %></li>
-        <% end %>
-      </ul>
+    <div class="recipe-info">
+        <div class="col-md-4">
+          <%= image_tag @recipe.image.url(:medium), class: "thumbnail" %>
+        </div>
+        <div class="col-md-5">
+          <h1><%= @recipe.name %></h1>
+          <span class="beer-style"><%= @recipe.beer_style %></span>
+          <p>Submitted by: <%= link_to (@recipe.user.first_name + " " + @recipe.user.last_name), @recipe.user %></p>
+          <p>ABV: <%= @recipe.ABV.round(2) %></p>
+          <p>IBU: <%= @recipe.IBU %></p>
+        </div>
+        <div class="col-md-3">
+          <div class="technical-info">
+            <ul class="list-group">
+              <li class="list-group-item">BATCH SIZE: <%= @recipe.batch_size %></li>
+              <li class="list-group-item">BOIL TIME: <%= @recipe.boil_time %></li>
+              <li class="list-group-item">OG: <%= @recipe.OG.round(5) %></li>
+              <li class="list-group-item">FG: <%= @recipe.FG.round(5) %></li>
+              <li class="list-group-item">SRM: <%= @recipe.SRM %></li>
+            </ul>
+          </div>
+        </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <h3>Yeast</h3>
-      <ul class="list-group">
-        <% @recipe.yeasts.each do |yeast| %>
-          <li class="list-group-item"><%= yeast.description %></li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3>Miscellaneous</h3>
-      <ul class="list-group">
-        <% @recipe.miscs.each do |misc| %>
-          <li class="list-group-item"><%= misc.description %></li>
-        <% end %>
-      </ul>
+    <div class="col-md-8 col-md-offset-2">
+      <p><%= simple_format(@recipe.description) %></p>
     </div>
   </div>
+  <div class="ingredients">
+    <div class="row">
+      <div class="col-md-6">
+          <h3>Grains</h3>
+        <ul class="list-group">
+          <% @recipe.grains.each do |grain| %>
+            <li class="list-group-item"><%= grain.description %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>Hops</h3>
+        <ul class="list-group">
+          <% @recipe.hops.each do |hop| %>
+            <li class="list-group-item"><%= hop.description %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Yeast</h3>
+        <ul class="list-group">
+          <% @recipe.yeasts.each do |yeast| %>
+            <li class="list-group-item"><%= yeast.description %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>Miscellaneous</h3>
+        <ul class="list-group">
+          <% @recipe.miscs.each do |misc| %>
+            <li class="list-group-item"><%= misc.description %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% if !@recipe.directions.empty? %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Directions</h3>
+      <ol>
+        <% @recipe.directions.each do |direction| %>
+          <li><%= direction.description %></li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+  <% end %>
 </div>
 
-<% if !@recipe.directions.empty? %>
-<div class="container">
-  <div class="col-md-12">
-    <h3>Directions</h3>
-    <ol>
-      <% @recipe.directions.each do |direction| %>
-        <li><%= direction.description %></li>
-      <% end %>
-    </ol>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+      <%= render "comments/form" %>
+    </div>
   </div>
-</div>
-<% end %>
-
-<div class="container">
-  <div class="col-md-12">
-    <%= render "comments/form" %>
-  </div>
-  <div class="col-md-8">
-    <p class="comment-count"><%= @recipe.comments.count %> Comments</p>
-    <div class="col-md-offset-1">
+  <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+      <p class="comment-count"><%= @recipe.comments.count %> Comments</p>
       <% @recipe.comments.each do |comment| %>
         <span><%= comment.user.first_name + ' ' + comment.user.last_name%></span>
         <small class="time-ago"><%= time_ago_in_words(comment.created_at) %> ago</small>
-        <p class="comment-content"><%= comment.content %><p>
+        <p class="comment-content"><%= comment.content %></p>
       <% end %>
     </div>
   </div>
