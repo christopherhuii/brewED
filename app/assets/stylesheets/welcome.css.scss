@@ -51,6 +51,7 @@ $dark_gray: #2b2e2e;
   .text-wrapper {
     position: relative;
     top: 50%;
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 
@@ -107,10 +108,12 @@ $dark_gray: #2b2e2e;
 
 .callouts {
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 
   @media (max-width: 767px) {
     top: 0%;
+    -webkit-transform: translateY(-50%);
     transform: translateY(0%);
   }
 

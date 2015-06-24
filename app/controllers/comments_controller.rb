@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @recipe.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to root_path #change this the the appropriate path later
+      redirect_to user_recipe_path(@recipe.user, @recipe)
     end
   end
 
