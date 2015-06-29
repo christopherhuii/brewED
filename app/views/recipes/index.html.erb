@@ -1,11 +1,13 @@
 <div class="recipes">
-  <% @recipes.each do |recipe| %>
-  <div class="box panel panel-default">
-    <%= link_to (image_tag recipe.image), user_recipe_path(recipe.user, recipe)  %>
-    <div class="panel panel-body">
-      <%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %>
-      <p><%= recipe.beer_style %></p>
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+    <div class="box panel panel-default">
+      <%= link_to (image_tag recipe.image), user_recipe_path(recipe.user, recipe)  %>
+      <div class="panel panel-body">
+        <%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %>
+        <p class="beer-style"><%= recipe.beer_style %></p>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
