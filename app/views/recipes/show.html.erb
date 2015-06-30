@@ -6,6 +6,15 @@
         </div>
         <div class="col-md-5">
           <h1><%= @recipe.name %></h1>
+
+          <% if @recipe.user == current_user %>
+            <%= link_to edit_user_recipe_path(@recipe.user, @recipe) do %>
+              <span class="label label-warning">Edit</span>
+            <% end %>
+            <%= link_to user_recipe_path(@recipe.user, @recipe), method: :delete, data: { confirm: "Are you sure?"} do %>
+              <span class="label label-danger">Delete</span>
+            <% end %>
+          <% end %>
           <span class="beer-style"><%= @recipe.beer_style %></span>
           <p>Submitted by: <%= link_to (@recipe.user.first_name + " " + @recipe.user.last_name), @recipe.user %></p>
           <p>ABV: <%= @recipe.ABV.round(2) %></p>

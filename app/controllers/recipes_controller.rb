@@ -38,7 +38,9 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-
+    if @recipe.destroy
+      redirect_to user_recipes_path(@user)
+    end
   end
 
   private
